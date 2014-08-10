@@ -215,7 +215,6 @@
             this.Name = "FocusTimer";
             this.Text = "Focus Timer Options";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClosingForm);
-            this.Load += new System.EventHandler(this.FormLoad);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

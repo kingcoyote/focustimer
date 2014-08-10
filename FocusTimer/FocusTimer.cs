@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using FocusTimer.Properties;
 
@@ -13,12 +14,18 @@ namespace FocusTimer
         private int _minutes;
         private bool _closing;
 
+        private Icon IconG;
+        private Icon IconY;
+
         public FocusTimer()
         {
             InitializeComponent();
             _stopwatch = new Stopwatch();
             StartUITimer();
             ResetSettings();
+
+            IconG = new Icon("focustime-g.ico");
+            IconY = new Icon("focustime-y.ico");
         }
 
         private void StartUITimer()
@@ -43,9 +50,11 @@ namespace FocusTimer
                 }
                 var displayTime = PrintTime(remainingMs);
                 ToolStripRemaining.Text = displayTime;
+                NotifyIcon.Icon = IconY;
             } else
             {
                 ToolStripRemaining.Text = "--:--";
+                NotifyIcon.Icon = IconG;
             }
         }
 
