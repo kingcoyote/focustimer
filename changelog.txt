@@ -1,0 +1,13 @@
+FocusTimer
+===============================================================================
+
+0.2.0 (development)
+-------------------------------------------------------------------------------
+- Converted main form into an options form with configurable messages for
+  the NotifyIcon.
+  
+0.1.0 (2014-08-07)
+-------------------------------------------------------------------------------
+- Initial release.
+- Support for configuring a timer, letting it run, and then having a pop-up
+  notification telling you when the timer is up.

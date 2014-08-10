@@ -30,44 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FocusTimer));
-            this.BtnStart = new System.Windows.Forms.Button();
-            this.BtnStop = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtMinutes = new System.Windows.Forms.TextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.StatusRemaining = new System.Windows.Forms.ToolStripStatusLabel();
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.startTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showTimreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripRemaining = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.startTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.statusStrip1.SuspendLayout();
+            this.showTimreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnSave = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtTitle = new System.Windows.Forms.TextBox();
+            this.TxtMessage = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BtnStart
-            // 
-            this.BtnStart.Location = new System.Drawing.Point(93, 38);
-            this.BtnStart.Name = "BtnStart";
-            this.BtnStart.Size = new System.Drawing.Size(75, 23);
-            this.BtnStart.TabIndex = 0;
-            this.BtnStart.Text = "Start";
-            this.BtnStart.UseVisualStyleBackColor = true;
-            this.BtnStart.Click += new System.EventHandler(this.StartTimer);
-            // 
-            // BtnStop
-            // 
-            this.BtnStop.Location = new System.Drawing.Point(12, 38);
-            this.BtnStop.Name = "BtnStop";
-            this.BtnStop.Size = new System.Drawing.Size(75, 23);
-            this.BtnStop.TabIndex = 1;
-            this.BtnStop.Text = "Stop";
-            this.BtnStop.UseVisualStyleBackColor = true;
-            this.BtnStop.Click += new System.EventHandler(this.StopTimer);
             // 
             // label1
             // 
@@ -80,27 +61,12 @@
             // 
             // TxtMinutes
             // 
-            this.TxtMinutes.Location = new System.Drawing.Point(68, 12);
+            this.TxtMinutes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtMinutes.Location = new System.Drawing.Point(96, 12);
             this.TxtMinutes.Name = "TxtMinutes";
             this.TxtMinutes.Size = new System.Drawing.Size(100, 20);
             this.TxtMinutes.TabIndex = 3;
-            this.TxtMinutes.Text = "30";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusRemaining});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 69);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(181, 22);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // StatusRemaining
-            // 
-            this.StatusRemaining.Name = "StatusRemaining";
-            this.StatusRemaining.Size = new System.Drawing.Size(34, 17);
-            this.StatusRemaining.Text = "00:00";
             // 
             // NotifyIcon
             // 
@@ -117,77 +83,139 @@
             this.toolStripSeparator1,
             this.startTimerToolStripMenuItem,
             this.stopTimerToolStripMenuItem,
-            this.showTimreToolStripMenuItem,
             this.toolStripSeparator2,
+            this.showTimreToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(138, 126);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 126);
             this.contextMenuStrip1.Text = "Exit";
+            // 
+            // ToolStripRemaining
+            // 
+            this.ToolStripRemaining.Enabled = false;
+            this.ToolStripRemaining.Name = "ToolStripRemaining";
+            this.ToolStripRemaining.Size = new System.Drawing.Size(132, 22);
+            this.ToolStripRemaining.Text = "--:--";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
             // 
             // startTimerToolStripMenuItem
             // 
             this.startTimerToolStripMenuItem.Name = "startTimerToolStripMenuItem";
-            this.startTimerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.startTimerToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.startTimerToolStripMenuItem.Text = "Start Timer";
             this.startTimerToolStripMenuItem.Click += new System.EventHandler(this.StartTimer);
             // 
             // stopTimerToolStripMenuItem
             // 
             this.stopTimerToolStripMenuItem.Name = "stopTimerToolStripMenuItem";
-            this.stopTimerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.stopTimerToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.stopTimerToolStripMenuItem.Text = "Stop Timer";
             this.stopTimerToolStripMenuItem.Click += new System.EventHandler(this.StopTimer);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(129, 6);
             // 
             // showTimreToolStripMenuItem
             // 
             this.showTimreToolStripMenuItem.Name = "showTimreToolStripMenuItem";
-            this.showTimreToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.showTimreToolStripMenuItem.Text = "Show Timer";
+            this.showTimreToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.showTimreToolStripMenuItem.Text = "Options";
             this.showTimreToolStripMenuItem.Click += new System.EventHandler(this.ShowTimer);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitFocusTimer);
             // 
-            // ToolStripRemaining
+            // BtnSave
             // 
-            this.ToolStripRemaining.Enabled = false;
-            this.ToolStripRemaining.Name = "ToolStripRemaining";
-            this.ToolStripRemaining.Size = new System.Drawing.Size(137, 22);
-            this.ToolStripRemaining.Text = "--:--";
+            this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSave.Location = new System.Drawing.Point(121, 201);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(75, 23);
+            this.BtnSave.TabIndex = 4;
+            this.BtnSave.Text = "Save";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSaveClick);
             // 
-            // toolStripSeparator1
+            // BtnCancel
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
+            this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCancel.Location = new System.Drawing.Point(40, 201);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancel.TabIndex = 5;
+            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancelClick);
             // 
-            // toolStripSeparator2
+            // label2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(134, 6);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Notification Title";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Notification Message";
+            // 
+            // TxtTitle
+            // 
+            this.TxtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtTitle.Location = new System.Drawing.Point(16, 60);
+            this.TxtTitle.Multiline = true;
+            this.TxtTitle.Name = "TxtTitle";
+            this.TxtTitle.Size = new System.Drawing.Size(181, 55);
+            this.TxtTitle.TabIndex = 8;
+            // 
+            // TxtMessage
+            // 
+            this.TxtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtMessage.Location = new System.Drawing.Point(16, 134);
+            this.TxtMessage.Multiline = true;
+            this.TxtMessage.Name = "TxtMessage";
+            this.TxtMessage.Size = new System.Drawing.Size(181, 55);
+            this.TxtMessage.TabIndex = 9;
             // 
             // FocusTimer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(181, 91);
-            this.Controls.Add(this.statusStrip1);
+            this.ClientSize = new System.Drawing.Size(209, 236);
+            this.Controls.Add(this.TxtMessage);
+            this.Controls.Add(this.TxtTitle);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.BtnCancel);
+            this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.TxtMinutes);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnStop);
-            this.Controls.Add(this.BtnStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FocusTimer";
-            this.Text = "Focus Timer";
+            this.Text = "Focus Timer Options";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClosingForm);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.FormLoad);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,12 +224,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button BtnStart;
-        private System.Windows.Forms.Button BtnStop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtMinutes;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel StatusRemaining;
         private System.Windows.Forms.NotifyIcon NotifyIcon;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem startTimerToolStripMenuItem;
@@ -211,6 +235,12 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripRemaining;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.Button BtnSave;
+        private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtTitle;
+        private System.Windows.Forms.TextBox TxtMessage;
     }
 }
 
