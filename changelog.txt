@@ -5,6 +5,8 @@ FocusTimer
 -------------------------------------------------------------------------------
 - Converted main form into an options form with configurable messages for
   the NotifyIcon.
+- Changed NotifyIcon color from white to green, with yellow as the color when
+  the timer is active.
   
 0.1.0 (2014-08-07)
 -------------------------------------------------------------------------------

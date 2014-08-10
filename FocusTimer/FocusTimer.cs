@@ -23,7 +23,7 @@ namespace FocusTimer
 
         private void StartUITimer()
         {
-            _uiTimer = new Timer { Interval = 100, Enabled = true };
+            _uiTimer = new Timer { Interval = 10, Enabled = true };
             _uiTimer.Tick += UpdateUI;
         }
 
@@ -43,8 +43,6 @@ namespace FocusTimer
                 }
                 var displayTime = PrintTime(remainingMs);
                 ToolStripRemaining.Text = displayTime;
-                
-
             } else
             {
                 ToolStripRemaining.Text = "--:--";
@@ -117,11 +115,6 @@ namespace FocusTimer
         private void BtnSaveClick(object sender, EventArgs e)
         {
             SaveSettings();
-        }
-
-        private void FormLoad(object sender, EventArgs e)
-        {
-            MinimizeToTray();
         }
 
         private void ShowTimer(object sender, EventArgs e)
